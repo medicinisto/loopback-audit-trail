@@ -24,9 +24,7 @@ This logger works by attaching afterRemote and afterRemoteError methods on an AP
 - User IP address - It is captued in the user object as `user.ip`
 
 ## Sample usage with bunyan-mongodb-logger
-In your server.js, before callin``````
-
-g [boot](https://apidocs.strongloop.com/loopback-boot/#boot) initialize a [bunyan-mongodb-logger](https://github.com/trentm/node-bunyan) instance like
+In your server.js, before calling [boot](https://apidocs.strongloop.com/loopback-boot/#boot) initialize a [bunyan-mongodb-logger](https://github.com/trentm/node-bunyan) instance like
 
 ```
 var bunyanMongoDbLogger = require('bunyan-mongodb-logger');
