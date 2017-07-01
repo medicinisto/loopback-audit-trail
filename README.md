@@ -37,12 +37,12 @@ var log = bunyanMongoDbLogger({
 
 Pass the instance of bunyan to [loopback-audit-trail](https://github.com/yantrashala/loopback-audit-trail) as
 ```
-require('loopback-audit-trail')(log);
+require('loopback-audit-logger')(log);
 ```
 
 Add the following to initialize the component in your component-config.json.
 ```
-"loopback-audit-trail": {}
+"loopback-audit-logger": {}
 ```
 
 ## Sample usage with node-bunyan
@@ -50,7 +50,7 @@ Instead of a bunyan-mongodb-logger istance, initialize a [bunyan](https://github
 
 ```
 var bunyan = require('bunyan');
-var log = bunyan.createLogger({name: "myapp"});
+var log = bunyan.createLogger({name: "myApp"});
 ```
 
 **P.S.** You should add the code to initialize logger component with bunyan logger before calling boot method of loopback.
