@@ -1,10 +1,14 @@
 'use strict';
 
 var auditLogger;
+var auditConfig;
 var defaultLogger = require('./lib/defaultLogger');
 var loopbackHook = require('./lib/loopbackHook');
 
 module.exports = function (app, config) {
+
+    if (Object.keys(config).length != 0 || config.constructor != Object)
+        auditConfig = config;
 
     app = app || defaultLogger;
     var hook;
@@ -16,7 +20,7 @@ module.exports = function (app, config) {
             auditLogger = defaultLogger;
         }
 
-        loopbackHook.init(app, config, auditLogger);
+        loopbackHook.init(app, auditConfig, auditLogger);
 
         return;
     } else {
